@@ -2,7 +2,7 @@ import { HttpContext } from '@adonisjs/core/http'
 import app from '@adonisjs/core/services/app'
 import next from 'next'
 import nextBuild from 'next/dist/build/index.js'
-import { type NextServer } from 'next/dist/server/next.js'
+import type { NextServerOptions, NextServer } from 'next/dist/server/next.js'
 
 export class NextService {
   private readonly nextApp: NextServer
@@ -12,7 +12,14 @@ export class NextService {
       dev: process.env.NODE_ENV !== 'production',
       customServer: true,
       dir: this.resolveAppDir(),
-    })
+      conf: {
+        webpack: (config, { isServer }) => {
+          console.log('isServer', isServer)
+          config.externals = '@adonisjs/core'
+          return config
+        },
+      },
+    } satisfies NextServerOptions)
   }
 
   private resolveAppDir(): string {
