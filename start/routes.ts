@@ -13,4 +13,9 @@ import { middleware } from './kernel.js'
 
 router
   .get('*', [AppsController, 'index'])
-  .middleware([middleware.wakuDevServer(), middleware.wakuSsr(), middleware.wakuRsc()])
+  .middleware([
+    middleware.wakuInit(),
+    middleware.wakuDevServer(),
+    middleware.wakuSsr(),
+    middleware.wakuRsc(),
+  ])

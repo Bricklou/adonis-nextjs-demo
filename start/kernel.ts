@@ -35,6 +35,7 @@ router.use([() => import('@adonisjs/core/bodyparser_middleware')])
  * the routes or the routes group.
  */
 export const middleware = router.named({
+  wakuInit: () => import('#middleware/waku_init_middleware'),
   wakuSsr: () => import('#middleware/waku_ssr_middleware'),
   wakuDevServer: () => import('#middleware/waku_dev_server_middleware'),
   wakuRsc: () => import('#middleware/waku_rsc_middleware'),
