@@ -1,5 +1,5 @@
 import { ReactElement, Suspense } from 'react'
-import { State } from './state'
+import { State } from './state.js'
 
 export default function Index(): ReactElement {
   return (

@@ -1,8 +1,8 @@
 'use server'
 import { ReactElement } from 'react'
-import { readHostname } from './os_data'
+import { readHostname } from './os_data.js'
 import app from '@adonisjs/core/services/app'
-import { DemoService } from '../../services/demo_service'
+import { DemoService } from '../../services/demo_service.js'
 
 export async function State(): Promise<ReactElement> {
   console.log('State', app)

@@ -21,7 +21,8 @@
       "#start/*": ["./start/*.js"],
       "#config/*": ["./config/*.js"]
     },
-    "strict": true
+    "strict": true,
+    "jsx": "react-jsx"
   },
-  "exclude": ["./app/frontend/**/*"]
+  "exclude": ["app/views/**/*"]
 }

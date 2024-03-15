@@ -34,4 +34,7 @@ router.use([() => import('@adonisjs/core/bodyparser_middleware')])
  * Named middleware collection must be explicitly assigned to
  * the routes or the routes group.
  */
-export const middleware = router.named({})
+export const middleware = router.named({
+  wakuDevServer: () => import('#middleware/waku_dev_server_middleware'),
+  wakuRsc: () => import('#middleware/waku_rsc_middleware'),
+})
