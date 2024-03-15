@@ -1,5 +1,4 @@
 import type { HttpContext } from '@adonisjs/core/http'
-import app from '@adonisjs/core/services/app'
 import type { NextFn } from '@adonisjs/core/types/http'
 import { Readable } from 'node:stream'
 import { ReadableStream } from 'node:stream/web'
@@ -8,9 +7,7 @@ import devServer from 'waku/middleware/dev-server'
 const devServerInstance = devServer({
   cmd: 'dev',
   config: {
-    srcDir: app.makePath('app/views'),
-    mainJs: 'client/index.tsx',
-    entriesJs: 'server/index.tsx',
+    srcDir: 'app/views',
   },
 })
 

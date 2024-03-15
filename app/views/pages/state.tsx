@@ -1,4 +1,3 @@
-'use server'
 import { ReactElement } from 'react'
 import { readHostname } from './os_data.js'
 import app from '@adonisjs/core/services/app'
