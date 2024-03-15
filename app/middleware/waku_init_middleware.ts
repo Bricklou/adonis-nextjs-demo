@@ -17,7 +17,7 @@ export default class WakuInitMiddleware {
         body: (Readable.toWeb(request.request) || createEmptyReadableStream()) as any,
         url: new URL(request.completeUrl()),
         method: request.method(),
-        headers: {},
+        headers: request.headers(),
       },
       res: {},
       context: {},
